@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import "package:calculator/widgets/calculator_button.dart";
 
-class CalculatorRowGrid extends StatelessWidget {
+class CalculatorRowView extends StatelessWidget {
   final List<String> buttonTexts;
   final void Function(String text) onPressed;
-  
-  const CalculatorRowGrid({
+
+  const CalculatorRowView({
     required this.buttonTexts,
     required this.onPressed,
     super.key,
@@ -17,8 +17,16 @@ class CalculatorRowGrid extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         ...buttonTexts.map(
-          (text) =>
-              CalculatorButton(text: text, onPressed: () => onPressed(text)),
+          (text) => Expanded(
+            flex: 1,
+            child: Padding(
+              padding: EdgeInsets.all(4),
+              child: CalculatorButton(
+                text: text,
+                onPressed: () => onPressed(text),
+              ),
+            ),
+          ),
         ),
       ],
     );

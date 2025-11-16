@@ -6,13 +6,7 @@ class CalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 72, 93, 129),
-          title: Text("Calculator"),
-        ),
-        body: CalculatorScreen(),
-      ),
+      home: CalculatorScreen(),
     );
   }
 }
